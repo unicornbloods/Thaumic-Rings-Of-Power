@@ -35,13 +35,6 @@ public class ItemRing extends Item implements IBauble, IWarpingGear {
     }
 
     @Override
-    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
-        entityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));
-        entityPlayer.addPotionEffect(new PotionEffect(Potion.field_76434_w.getId(), 3600, 2));
-        return super.onItemRightClick(itemStack, world, entityPlayer);
-    }
-
-    @Override
     public BaubleType getBaubleType(ItemStack itemstack) {
         if (itemstack.getItemDamage() <= 0) {
             return BaubleType.RING;
