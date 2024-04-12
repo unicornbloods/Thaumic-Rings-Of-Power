@@ -1,25 +1,22 @@
-item.ring_narya.name=§dRing Narya§r
-item.ring_nenya.name=§dRing Nenya§r
-item.ring_vilya.name=§dRing Vilya§r
-
-item.ring_thulin.name=§bThulin's Ring§r
-item.ring_khibil.name=§bKhibil's Ring§r
-item.ring_farin.name=§bFarin's Ring§r
-item.ring_khain.name=§bKhain's Ring§r
-item.ring_baraz.name=§bBaraz's Ring§r
-item.ring_burin.name=§bBurin's Ring§r
-item.ring_thror.name=§bThror's Ring§r
-
-item.ring_murazor.name=§cMurazor's Ring§r
-item.ring_hoarmurath.name=§cHoarmurath's Ring§r
-item.ring_akhorahil.name=§cAkhorahil's Ring§r
-item.ring_adunaphel.name=§cAdunaphel's Ring§r
-item.ring_jiindur.name=§cJi Indur's Ring§r
-item.ring_khamul.name=§cKhamul's Ring§r
-item.ring_uvatha.name=§cUvatha's Ring§r
-item.ring_ren.name=§cRen's Ring§r
-item.ring_dwar.name=§cDwar's Ring§r
-
-item.ring_great.name=§6The One Ring§r
+item.item_ring.0.name=§6The One Ring§r
+item.item_ring.1.name=§dRing Narya§r
+item.item_ring.2.name=§dRing Nenya§r
+item.item_ring.3.name=§dRing Vilya§r
+item.item_ring.4.name=§bThror's Ring§r
+item.item_ring.5.name=§bThulin's Ring§r
+item.item_ring.6.name=§bKhibil's Ring§r
+item.item_ring.7.name=§bFarin's Ring§r
+item.item_ring.8.name=§bKhain's Ring§r
+item.item_ring.9.name=§bBaraz's Ring§r
+item.item_ring.10.name=§bBurin's Ring§r
+item.item_ring.11.name=§cMurazor's Ring§r
+item.item_ring.12.name=§cHoarmurath's Ring§r
+item.item_ring.13.name=§cAkhorahil's Ring§r
+item.item_ring.14.name=§cAdunaphel's Ring§r
+item.item_ring.15.name=§cJi Indur's Ring§r
+item.item_ring.16.name=§cKhamul's Ring§r
+item.item_ring.17.name=§cUvatha's Ring§r
+item.item_ring.18.name=§cRen's Ring§r
+item.item_ring.19.name=§cDwar's Ring§r
 
 itemGroup.trop.rings=Rings of Power

@@ -11,18 +11,17 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 
-public class ItemRingVilya extends ItemRing {
+public class ItemRingVilya {
 
-    @Override
-    public List<PotionEffect> getPotionEffects() {
+    public static List<PotionEffect> getPotionEffects() {
         List<PotionEffect> potionEffects = new ArrayList<>();
         potionEffects.add(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
         potionEffects.add(new PotionEffect(Potion.jump.getId(), 20, 1));
         return potionEffects;
     }
 
-    @Override
-    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean advanced) {
+    public static List addInformation() {
+        List list = new ArrayList();
         String potionColorCode = "" + EnumChatFormatting.DARK_GREEN;
         String loreColorCode = "" + EnumChatFormatting.BLUE + EnumChatFormatting.ITALIC;
         list.add(
@@ -34,5 +33,6 @@ public class ItemRingVilya extends ItemRing {
         list.add(
                 loreColorCode
                         + "Three Rings for the Elven-kings under the sky");
+        return list;
     }
 }

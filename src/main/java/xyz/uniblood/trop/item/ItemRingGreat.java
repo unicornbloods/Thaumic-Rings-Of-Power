@@ -1,5 +1,6 @@
 package xyz.uniblood.trop.item;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -12,20 +13,25 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
+import thaumcraft.api.IRunicArmor;
 import thaumcraft.api.IWarpingGear;
 import thaumcraft.api.ThaumcraftApiHelper;
 import xyz.uniblood.trop.Config;
 import xyz.uniblood.trop.util.TropTextHelper;
 
-public class ItemRingGreat extends ItemRing implements IBauble, IWarpingGear {
+import static xyz.uniblood.trop.Config.maximumGreatRingWarp;
+import static xyz.uniblood.trop.Config.minimumGreatRingWarp;
+
+
+public class ItemRingGreat {
 
     private static final String NBT_TAG_FORGE_DATA = "Trop";
     private static final String NBT_TAG_MIND_CORRUPTION = "MindCorruption";
     private static final String NBT_TAG_WARP = "warp";
     public Random random = new Random();
 
-    @Override
-    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean advanced) {
+    public static List addInformation() {
+        List list = new ArrayList();
         String potionColorCode = "" + EnumChatFormatting.DARK_GREEN;
         String loreColorCode = "" + EnumChatFormatting.BLUE + EnumChatFormatting.ITALIC;
         String warningColorCode = "" + EnumChatFormatting.DARK_RED;
@@ -41,9 +47,10 @@ public class ItemRingGreat extends ItemRing implements IBauble, IWarpingGear {
         list.add(
                 warningColorCode
                         + "But at what cost?");
+
+        return list;
     }
 
-    @Override
     public void onWornTick(ItemStack stack, EntityLivingBase player) {
         if (!player.isInvisible()) {
             player.setInvisible(true);
@@ -147,13 +154,7 @@ public class ItemRingGreat extends ItemRing implements IBauble, IWarpingGear {
 //        ((EntityPlayer) player).readFromNBT(tag);
     }
 
-    @Override
-    public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
-        return true;
-    }
-
-    @Override
-    public int getWarp(ItemStack itemstack, EntityPlayer var2) {
+    public int getWarp(ItemStack itemstack) {
         return getItemWarpLevel(itemstack, false);
     }
 
@@ -172,7 +173,7 @@ public class ItemRingGreat extends ItemRing implements IBauble, IWarpingGear {
             stack.setTagCompound(tWarpTag);
         }
 
-        return 3 + Math.min(tWarpLevel, 30);
+        return Math.min(minimumGreatRingWarp + tWarpLevel, maximumGreatRingWarp);
     }
 
     private NBTTagCompound getOrSetForgeTag(EntityPlayer pPlayer) {

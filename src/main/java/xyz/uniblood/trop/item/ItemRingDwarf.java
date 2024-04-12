@@ -11,28 +11,28 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 
-public class ItemRingDwarf extends ItemRing {
+public class ItemRingDwarf {
 
-    @Override
-    public List<PotionEffect> getPotionEffects() {
+    public static List<PotionEffect> getPotionEffects() {
         List<PotionEffect> potionEffects = new ArrayList<>();
         potionEffects.add(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
         potionEffects.add(new PotionEffect(Potion.resistance.getId(), 20, 1));
         return potionEffects;
     }
 
-    @Override
-    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean advanced) {
+    public static List addInformation() {
+        List list = new ArrayList();
         String potionColorCode = "" + EnumChatFormatting.DARK_GREEN;
         String loreColorCode = "" + EnumChatFormatting.BLUE + EnumChatFormatting.ITALIC;
         list.add(
                 potionColorCode
-                        + "Strength");
+                        + "Speed");
         list.add(
                 potionColorCode
-                        + "Night Vision");
+                        + "Resistance");
         list.add(
                 loreColorCode
                         + "Seven for the Dwarf-lords in their halls of stone");
+        return list;
     }
 }

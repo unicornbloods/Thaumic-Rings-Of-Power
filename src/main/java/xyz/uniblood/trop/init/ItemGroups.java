@@ -2,6 +2,7 @@ package xyz.uniblood.trop.init;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import xyz.uniblood.trop.item.ItemRing;
 
 public class ItemGroups {
 
@@ -9,9 +10,10 @@ public class ItemGroups {
 
         @Override
         public Item getTabIconItem() {
-            return Items.ringNarya;
+            return ItemRing.getItemById(1);
         }
     };
 
-    private ItemGroups() {}
+    private ItemGroups() {
+    }
 }
