@@ -1,10 +1,5 @@
 package xyz.uniblood.trop.item;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import baubles.api.IBauble;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -13,11 +8,13 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
-import thaumcraft.api.IRunicArmor;
-import thaumcraft.api.IWarpingGear;
 import thaumcraft.api.ThaumcraftApiHelper;
 import xyz.uniblood.trop.Config;
 import xyz.uniblood.trop.util.TropTextHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static xyz.uniblood.trop.Config.maximumGreatRingWarp;
 import static xyz.uniblood.trop.Config.minimumGreatRingWarp;
