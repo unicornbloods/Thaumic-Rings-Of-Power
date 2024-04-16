@@ -3,16 +3,14 @@ package xyz.uniblood.trop.init;
 import com.google.common.base.CaseFormat;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import xyz.uniblood.trop.item.*;
-
-import static baubles.common.Config.itemRing;
+import xyz.uniblood.trop.item.ItemRing;
 
 @SuppressWarnings({"WeakerAccess", "PublicField"})
 public class Items {
 
     public static void preInit() {
 
-        itemRing = new ItemRing();
+        ItemRing itemRing = new ItemRing();
 
         register(itemRing, "itemRing");
     }
