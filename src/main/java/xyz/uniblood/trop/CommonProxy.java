@@ -6,12 +6,15 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import xyz.uniblood.trop.init.Items;
 
+import java.io.File;
+
 public class CommonProxy {
 
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-        Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
+        String configFolder = event.getModConfigurationDirectory().getAbsolutePath() + File.separator;
+        Config.synchronizeConfiguration(new File(configFolder + "ThaumicRingsOfPower.cfg"));
 
         Items.preInit();
 
