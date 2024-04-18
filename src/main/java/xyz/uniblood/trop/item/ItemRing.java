@@ -158,15 +158,11 @@ public class ItemRing extends Item implements IBauble, IWarpingGear, IRunicArmor
 
     @Override
     public int getWarp(ItemStack itemStack, EntityPlayer var2) {
-        int warpLevel = 0;
-        if (itemStack.getItemDamage() == 0) {
-            warpLevel = ringGreat.getWarp(itemStack);
-        } else {
-            warpLevel = normalRingWarp;
-        }
-        // itemStack.getItemDamage() == 1 || itemStack.getItemDamage() == 2 || itemStack.getItemDamage() == 3
-        // The elven rings have no warp
-        return warpLevel;
+        return switch (itemStack.getItemDamage()) {
+            case 0 -> ringGreat.getWarp(itemStack);
+            case 1, 2, 3 -> 0; // The elven rings don't get warp by default
+            default -> normalRingWarp;
+        };
     }
 
 
