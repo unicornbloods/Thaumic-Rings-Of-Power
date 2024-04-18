@@ -1,8 +1,5 @@
 package xyz.uniblood.trop.item;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import cpw.mods.fml.relauncher.Side;
@@ -15,11 +12,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-
 import net.minecraft.util.IIcon;
 import thaumcraft.api.IRunicArmor;
 import thaumcraft.api.IWarpingGear;
 import xyz.uniblood.trop.init.ItemGroups;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static xyz.uniblood.trop.Config.greatRingRunicShield;
 import static xyz.uniblood.trop.Config.normalRingWarp;
@@ -165,6 +164,8 @@ public class ItemRing extends Item implements IBauble, IWarpingGear, IRunicArmor
         } else {
             warpLevel = normalRingWarp;
         }
+        // itemStack.getItemDamage() == 1 || itemStack.getItemDamage() == 2 || itemStack.getItemDamage() == 3
+        // The elven rings have no warp
         return warpLevel;
     }
 
