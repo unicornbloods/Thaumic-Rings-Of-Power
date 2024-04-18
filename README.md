@@ -30,5 +30,5 @@ LoTR Rings of Power with mod integration.
 # Credits
 
 * Unicorn Blood - Main Dev
-* DarkBum - Textures
+* [DarkBum](https://ko-fi.com/therealdarkbum) - Textures
 * GTNH + jss2a98aj - Helping me with random bugs
