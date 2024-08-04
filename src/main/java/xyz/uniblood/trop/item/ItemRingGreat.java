@@ -95,29 +95,29 @@ public class ItemRingGreat {
                                         + "increase, and strange things will start happening."));
             }
             // First effect should become active after ~5 Minutes
-            else if (corruption > 300 && corruption < 1400 && random.nextInt(200) == 0) {
+            else if (corruption > 300 && corruption < 1400 && random.nextInt(400) == 0) {
                 ((EntityPlayer) player)
                         .addChatMessage(new ChatComponentText(TropTextHelper.PURPLE + "The Ring somehow feels heavy"));
                 if (random.nextBoolean()) {
-                    player.addPotionEffect(new PotionEffect(Potion.blindness.id, 500, 2, false));
+                    player.addPotionEffect(new PotionEffect(Potion.blindness.id, 500, 1, false));
                 } else {
-                    player.addPotionEffect(new PotionEffect(Potion.confusion.id, 500, 2, false));
+                    player.addPotionEffect(new PotionEffect(Potion.confusion.id, 250, 1, false));
                 }
-            } else if (corruption >= 1400 && corruption < 3800 && random.nextInt(200) == 0) {
+            } else if (corruption >= 1400 && corruption < 3800 && random.nextInt(400) == 0) {
                 player.addPotionEffect(new PotionEffect(Potion.poison.id, 500, 1, false));
-            } else if (corruption >= 3800 && corruption < 6500 && random.nextInt(200) == 0) {
+            } else if (corruption >= 3800 && corruption < 6500 && random.nextInt(400) == 0) {
                 player.motionY += 2d;
             } else if (corruption >= 6500 && random.nextInt(10000) == 0) {
                 player.addPotionEffect(new PotionEffect(Potion.wither.id, 100, 2, false));
             }
 
-            if (corruption >= 300) { // worn more than 5 minutes
+            if (corruption >= 600) { // worn more than 10 minutes
                 if (random.nextInt(300) == 0) { // randomly every 5 min
                     getItemWarpLevel(stack, true);
                     ((EntityPlayer) player).addChatMessage(
                             new ChatComponentText(TropTextHelper.PURPLE + "The Ring suddenly starts to glow purple"));
                 }
-                if (random.nextInt(600) == 0) { // randomly every 10 minutes
+                if (random.nextInt(1200) == 0) { // randomly every 20 minutes
                     if (Config.greatRingPermanentWarp) {
                         // adds 1 perm warp
                         ThaumcraftApiHelper.addWarpToPlayer((EntityPlayer) player, 1, false);
@@ -127,8 +127,8 @@ public class ItemRingGreat {
                     ((EntityPlayer) player).addChatMessage(
                             new ChatComponentText(TropTextHelper.PURPLE + "Your body suddenly starts to glow purple"));
                 }
-                if (corruption >= 3600) { // if you wear it for more than an hour total
-                    if (random.nextInt(1800) == 0) { // randomly every 30 minutes
+                if (corruption >= 7200) { // if you wear it for more than two hours total
+                    if (random.nextInt(3600) == 0) { // randomly every hour
                         if (Config.greatRingPermanentWarp) {
                             // adds 0-5 perm warp
                             ThaumcraftApiHelper.addWarpToPlayer((EntityPlayer) player, random.nextInt(5), false);
